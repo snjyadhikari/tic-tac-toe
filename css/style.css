@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #F6F8D5;
+    text-align: center;
+}
+
+.title {
+    font-family: "Merienda", cursive;
+    font-weight: 400;
+    color: #4F959D;
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.game {
+    display: grid;
+    grid-template: repeat(3, 75px) / repeat(3, 75px);
+    gap: 4px;
+}
+
+.box {
+    width: 75px;
+    height: 75px;
+    background: #205781;
+    border: 3px solid #98D2C0;
+    border-radius: 8px;
+    color: #98D2C0;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.box:hover {
+    background: #327ba8;
+}
+
+.box.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    position: relative;
+}
+
+.box.disabled::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+}
+
+
+.popup {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255,255,255,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+}
+
+.popup.show {
+    display: flex;
+}
+
+.winnerMessage {
+    font-family: "Savate", sans-serif;
+    font-weight: 300;
+}
+
+.winnerMessage h1::first-letter {
+    font-size: 3rem;
+    font-weight: bold;
+    color: gold;
+    animation: zoomInOut 2s ease-in-out infinite;
+}
+
+.winnerMessage h1{
+    animation: zoomInOut 2s ease-in-out infinite;
+}
+
+@keyframes zoomInOut {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Priority: Buttons */
+.btn {
+    background: #4F959D;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s, transform 0.2s;
+    font-family: "Savate", sans-serif;
+    font-weight: 300;
+}
+
+.resetBtn {
+    background: #CD5656;
+    border: 2px solid #AF3E3E;
+}
+
+.resetBtn:hover {
+    background: #AF3E3E;
+    transform: scale(1.05);
+}
+
+.closeBtn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: none;
+    border: 0;
+    font-size: 3rem;
+    padding: 12px;
+    cursor: pointer;
+    color: #444;
+}

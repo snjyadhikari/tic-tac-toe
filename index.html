@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Savate:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <!-- <img src="./images/logo.webp" alt="Logo" class="logo"> -->
+            <h1 class="title">Tic Tac Toe</h1>
+            <h4 class="subTitle"><span>X vs O </span> – Let the Battle Begin!</h4>
+        </div>
+
+
+        <div class="gameContainer">
+            <div class="game">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <button class="btn resetBtn" id="resetBtn" onclick="resetGame()">Restart Game</button>
+        </div>
+
+        <div id="msgPopup" class="popup">
+            <div class="winnerMessage">
+                <h1 id="winnerMessageTxt"></h1>
+                <button class="closeBtn" onclick="closePopup()">&times;</button>
+            </div> <!-- Content will be injected here -->
+        </div>
+    </div>
+
+    <!-- Include canvas-confetti from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- Include the main JavaScript file -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
