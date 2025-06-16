@@ -98,13 +98,15 @@ const checkWinner = () => {
         // Check for a draw condition
         if (!winnerFound) {
 
-            let allFilled = true;
-            for (let box of boxes) {
-                if (box.innerText === '') {
-                    allFilled = false;
-                    break;
-                }
-            }
+            let allFilled = [...boxes].every(box => box.innerText !== '');
+
+            // let allFilled = true;
+            // for (let box of boxes) {
+            //     if (box.innerText === '') {
+            //         allFilled = false;
+            //         break;
+            //     }
+            // }
 
             if (allFilled) {
                 celebrate(`🤝 It’s a draw! Fair and square.`);
